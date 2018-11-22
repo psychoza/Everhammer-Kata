@@ -1,0 +1,56 @@
+Iteration 1 - Core ?
+
+Feature: Create a Character
+  As a character, I want to have a name so I can distinguish myself from other characters
+  * Get / Set name
+
+Feature: Attributes
+  As a character, I want to attributes to determine the things I am and am not good attributes
+  * Attributes are Weapon Skill, Strength, Toughness, Willpower
+  * They are defaulted to 10
+  * They can be randomized by rolling 2 10 sided dice and adding their results
+  * Attributes have a bonus which is the number in the tens place
+    * ie a Strength of 17 has a Strength Bonus of +1
+
+Feature: Species
+  As a character, I want the ability to be a human
+  * As a human, they get a +20 bonus to all attribute scores.
+
+Feature: Wounds
+  As a character, I want the ability to determine how much damage I can take
+  * Your Wounds "attribute" is determined by Strength Bonus + (2x Toughness Bonus) + Willpower Bonus
+  * Wounds can be reduced and once Wounds reaches 0, a character becomes Prone (discussed later?)
+  * If you do not regain any Wounds within a number of Rounds = to your Toughness Bonus, you will pass out, gaining the Unconcious condition
+  * Wounds can never be below 0
+
+Feature: Damage
+  As a character, I want the ability to take damage
+  * When taking damage, a character reduces the incoming damage by their Toughness Bonus
+    * This can only reduce the damage to 1, it cannot negate it completely
+  * Damage should never be tracked as more than the wounds you could take
+
+Feature: Critical Wounds
+  As a character, I want the ability to suffer truly debilitating effects
+  * When at 0 Wounds or taking more damage than Wounds you have left, you suffer a Critical Wounds
+  * If you suffer fewer negative wounds than your Toughness Bonus (-4 wounds compared to 4 Toughness Bonus), you subtract -20 from the Critical Table result with a minimum result of 01.
+  
+Feature: Death
+  As a character, I want the ability to be declared declared
+  * When a character has the Unconcious condition, and wounds are equal to 0, then compare the number of Critical Wounds to your Toughness Bonus.
+    * If you have more wounds than the toughness bonus, you are pronounced dead at the end of the round.
+
+Feature: The melee skill
+  As a character, I want the ability to have knowledge in melee combat to determine my skill's level
+  * The melee skill uses the Weapon Skill Score as its base number then adds "advances" from training to determine the skill's level.
+  * 41 Weapon Skill + 5 Melee(Basic) = 46 Skill Level)
+
+Feature: Attack (Melee Skill Test)
+  As a character, I want the ability to attack another character.
+  * Roll 2 10 sided dice, one being the tens place, and one being the units place
+  * Subtract the rolled result from your Melee Skill.
+  * Determine your attack's Success Level like attribute bonuses (46 Melee Skill Level - 34 Attack Roll = 12,  Math.Floor(12 / 10) = +1 SL)
+
+Feature: Retaliate
+  As a character, I want the ability to retaliate when I am attacked
+  * Make a Melee Skill Test as the previous Feature
+  * Compare the attacker's Success Level versus the Defender's Success Level and award a point of Advantage to the winner.... or something
