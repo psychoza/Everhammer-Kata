@@ -5,7 +5,7 @@ Feature: Create a Character
   * Get / Set name
 
 Feature: Attributes
-  As a character, I want to attributes to determine the things I am and am not good attributes
+  As a character, I want attributes to determine the things I am and am not good at
   * Attributes are Weapon Skill, Strength, Toughness, Willpower
   * They are defaulted to 10
   * They can be randomized by rolling 2 10 sided dice and adding their results
