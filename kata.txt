@@ -1,4 +1,4 @@
-Iteration 1 - Core ?
+Iteration 1 - Core Values
 
 Feature: Create a Character
   As a character, I want to have a name so I can distinguish myself from other characters
@@ -28,11 +28,13 @@ Feature: Damage
   * When taking damage, a character reduces the incoming damage by their Toughness Bonus
     * This can only reduce the damage to 1, it cannot negate it completely
   * Damage should never be tracked as more than the wounds you could take
+  * Evenutally add hit locations...
 
 Feature: Critical Wounds
   As a character, I want the ability to suffer truly debilitating effects
   * When at 0 Wounds or taking more damage than Wounds you have left, you suffer a Critical Wounds
   * If you suffer fewer negative wounds than your Toughness Bonus (-4 wounds compared to 4 Toughness Bonus), you subtract -20 from the Critical Table result with a minimum result of 01.
+  * Eventually add hit locations and critical wounds tables...
   
 Feature: Death
   As a character, I want the ability to be declared declared
@@ -50,7 +52,36 @@ Feature: Attack (Melee Skill Test)
   * Subtract the rolled result from your Melee Skill.
   * Determine your attack's Success Level like attribute bonuses (46 Melee Skill Level - 34 Attack Roll = 12,  Math.Floor(12 / 10) = +1 SL)
 
-Feature: Retaliate
-  As a character, I want the ability to retaliate when I am attacked
-  * Make a Melee Skill Test as the previous Feature
-  * Compare the attacker's Success Level versus the Defender's Success Level and award a point of Advantage to the winner.... or something
+Feature: Fend off attacks
+  As a character, I want the ability to fend off the attack when I am attacked
+  * Make a Melee Skill Test as the previous Feature when attacked and return the success level to the attacker
+  * Compare the attacker's Success Level versus the Defender's Success Level negate any damage if the defender is the higher
+  * The defender takes no damage if the levels are the same
+
+Feature: Advantage
+  As a character I want the ability to press my advantage in combat
+  * After succeeding in an Opposed Melee Skill Test with an opponent, gain a point of Advantage
+  * When determining future Melee Skill Tests with the same opponent, add a +10 to your Melee Skill Level for each point of Advantage
+  * When your Melee Skill Test's Success Level is the same as your opponents, do not gain any advantage
+  * When taking damage or leaving combat, lose all Advantage
+  * When taking no damage but gaining no Advntage in a round of combat, lose 1 point of Advantage
+
+
+
+Iteration 2 - Species
+
+Feature: Species: Dwarf
+  As a character, I want to be a rough and gruff Dwarf
+  * My Weapon Skill and Toughness should improve to +30 instead of the human's +20
+  * My Willpower should improve to +40 instead of the human's +20
+  
+Feature: Species: Elf
+  As a character, I want to be an agile Elf
+  * My Weapon Skill and Willpower should improve to +30 instead of the human's +20
+
+Feature: Species: Halfling
+  As a character, I want to be a small Halfling
+  * My Weapon Skill and Strength should decrease to +10 instead of the human's +20
+  * My Willpower should improve to +30 instead of the human's +20
+  * The formula for my Wounds should be modified to omit a Strength Bonus
+    * (2x Toughness Bonus) + Willpower Bonus
