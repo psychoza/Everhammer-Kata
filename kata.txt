@@ -85,3 +85,23 @@ Feature: Species: Halfling
   * My Willpower should improve to +30 instead of the human's +20
   * The formula for my Wounds should be modified to omit a Strength Bonus
     * (2x Toughness Bonus) + Willpower Bonus
+
+Iteration 3 - Armor
+
+Feature: Leather armor
+  As a character, I want the ability to equip leather armour and protect my body
+  * Track "Armor Points" for "Hit Locations" which inlude the "Head", "Body", "Left Arm", "Right Arm", "Left Leg", "Right Leg"
+  * Each hit location has 1 AP (Armor Point)
+  * Armor Points can be reduced to 0 by being hit and becoming useless
+
+Iteration 4 - Weapons
+
+Feature: Unarmed
+  As a character, I want the ability to punch my opponents relentlessly
+  * When determining damage dealt in a successful attack, use your Strength Bonus
+  * This weapon has the Undamaging Flaw
+    * When armor is in the location that you hit, double its bonus
+
+Feature: Hand Weapon (Sword)
+  As a character, I want ability to wield a sword and slash my opponents to death
+  * When determining damage in a successful attack, use your Strength Bonus + 4.
