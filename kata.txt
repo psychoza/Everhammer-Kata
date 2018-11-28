@@ -24,7 +24,7 @@ Feature: Wounds
   * Wounds can never be below 0
 
 Feature: Damage
-  As a character, I want the ability to take damage
+  As a character, I want the ability to take damage and absorb hits
   * When taking damage, a character reduces the incoming damage by their Toughness Bonus
     * This can only reduce the damage to 1, it cannot negate it completely
   * Damage should never be tracked as more than the wounds you could take
@@ -51,6 +51,10 @@ Feature: Attack (Melee Skill Test)
   * Roll 2 10 sided dice, one being the tens place, and one being the units place
   * Subtract the rolled result from your Melee Skill.
   * Determine your attack's Success Level like attribute bonuses (46 Melee Skill Level - 34 Attack Roll = 12,  Math.Floor(12 / 10) = +1 SL)
+
+Feature: Deal damage
+  As a character, I want the ability to land a hit on another character unopposed
+  * Target an enemy character and deal damage equal to the success level of your Melee Skill Test + your Strength Bonus
 
 Feature: Fend off attacks
   As a character, I want the ability to fend off the attack when I am attacked
