@@ -75,11 +75,6 @@ Feature: Critical Hit
   As a character, I want the ability to score a major hit on another character.
   * When rolling the 2 10 sided dice in an attack, if they are both the same and the attack was successful, the opponent suffers a critical wound
 
-Feature: Guaranteed success and failure
-  As a character, I want to be able to suceed no matter the odds. Likewise, I wish to be able to fail no matter how minor the task is.
-  * When rolling a skill test, if the rolled result is 01-05 then you automatically succeed
-  * When rolling a skill test, if the rolled result is 96-00 then you automatically fail
-
 Iteration 2 - Species
 
 Feature: Species: Dwarf
