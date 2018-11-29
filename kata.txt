@@ -49,9 +49,10 @@ Feature: The melee skill
 Feature: Attack (Melee Skill Test)
   As a character, I want the ability to attack another character.
   * Roll 2 10 sided dice, one being the tens place, and one being the units place
-  * Subtract the rolled result from your Melee Skill.
+  * The dice values are ranged between 0 - 9
+  * Subtract the rolled result from your Melee Skill
   * Determine your attack's Success Level like attribute bonuses (46 Melee Skill Level - 34 Attack Roll = 12,  Math.Floor(12 / 10) = +1 SL)
-
+  
 Feature: Deal damage
   As a character, I want the ability to land a hit on another character unopposed
   * Target an enemy character and deal damage equal to the success level of your Melee Skill Test + your Strength Bonus
@@ -69,8 +70,15 @@ Feature: Advantage
   * When your Melee Skill Test's Success Level is the same as your opponents, do not gain any advantage
   * When taking damage or leaving combat, lose all Advantage
   * When taking no damage but gaining no Advntage in a round of combat, lose 1 point of Advantage
+  
+Feature: Critical Hit
+  As a character, I want the ability to score a major hit on another character.
+  * When rolling the 2 10 sided dice in an attack, if they are both the same and the attack was successful, the opponent suffers a critical wound
 
-
+Feature: Guaranteed success and failure
+  As a character, I want to be able to suceed no matter the odds. Likewise, I wish to be able to fail no matter how minor the task is.
+  * When rolling a skill test, if the rolled result is 01-05 then you automatically succeed
+  * When rolling a skill test, if the rolled result is 96-00 then you automatically fail
 
 Iteration 2 - Species
 
