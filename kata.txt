@@ -75,6 +75,17 @@ Feature: Critical Hit
   As a character, I want the ability to score a major hit on another character.
   * When rolling the 2 10 sided dice in an attack, if they are both the same and the attack was successful, the opponent suffers a critical wound
 
+Feature: Hit Location
+  As a character, I want the ability to hit my opponent in specific locations
+  * When you roll your opposed melee skill test and win, reverse the roll result for a hit location number
+    * You rolled a 27 in your melee skill test, it translates to 72 for a hit location, in this case, the left leg.
+  * 01-09 | Head
+  * 10-24 | Left Arm
+  * 25-44 | Right Arm
+  * 45-79 | Body
+  * 80-89 | Left Leg
+  * 90-00 | Right Leg
+
 Iteration 2 - Species
 
 Feature: Species: Dwarf
