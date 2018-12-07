@@ -78,7 +78,7 @@ Feature: Critical Hit
 Feature: Hit Location
   As a character, I want the ability to hit my opponent in specific locations
   * When you roll your opposed melee skill test and win, reverse the roll result for a hit location number
-    * You rolled a 27 in your melee skill test, it translates to 72 for a hit location, in this case, the left leg.
+    * You rolled a 27 in your melee skill test, it translates to 72 for a hit location, in this case, the body.
   * 01-09 | Head
   * 10-24 | Left Arm
   * 25-44 | Right Arm
