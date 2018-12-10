@@ -121,10 +121,17 @@ Feature: Mail Coat
 
 Feature: Plate Leggings
   As a character, I want the ability to wear plate leggings to protect both of my legs
-  * Theplate leggings can only be worn on both legs
+  * The plate leggings can only be worn on both legs
   * It has an Armour Point value of 2
   * When tracking Armor Points, each individual location is tracked
     * Left leg is separate from right leg
+    
+Feature: Damage reduction
+  As a character, now that I am protected, damage should be reduced
+  * When taking damage from an attack in a location protected by armor, reduce that damage by the Armor Points in that location
+  * Damage can be reduced to 0
+  * When receiving a critical wound in a location, instead deal a point of damage to the armor in that location
+  * If the armor is at 0 armor points, deal the critical wound as normal
 
 Iteration 4 - Weapons
 
