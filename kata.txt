@@ -106,11 +106,25 @@ Feature: Species: Halfling
 
 Iteration 3 - Armor
 
-Feature: Leather armor
-  As a character, I want the ability to equip leather armour and protect my body
-  * Track "Armor Points" for "Hit Locations" which inlude the "Head", "Body", "Left Arm", "Right Arm", "Left Leg", "Right Leg"
-  * Each hit location has 1 AP (Armor Point)
+Feature: Skullcap
+  As a character, I want the ability to wear a leather skullcap and protect my noggin
+  * The skullcap can only be worn on my head.
+  * It has an Armour Point value of 1
   * Armor Points can be reduced to 0 by being hit and becoming useless
+
+Feature: Mail Coat
+  As a character, I want the ability to wear a mail coat and protect my body and arms
+  * The mail coat can only be worn on body and both arms
+  * It has an Armour Point value of 2
+  * When tracking Armor Points, each individual location is tracked
+    * Left arm can be reduced without reducing the protection for body and right arm
+
+Feature: Plate Leggings
+  As a character, I want the ability to wear plate leggings to protect both of my legs
+  * Theplate leggings can only be worn on both legs
+  * It has an Armour Point value of 2
+  * When tracking Armor Points, each individual location is tracked
+    * Left leg is separate from right leg
 
 Iteration 4 - Weapons
 
