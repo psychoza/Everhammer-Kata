@@ -138,12 +138,28 @@ A kata based on Warhammer instead of D&amp;D much like the Evercraft kata.   [ht
 
 ## Iteration 4 - Weapons
 
-### Feature: Unarmed
-  As a character, I want the ability to punch my opponents relentlessly
-  * When determining damage dealt in a successful attack, use your Strength Bonus
-  * This weapon has the Undamaging Flaw
-    * When armor is in the location that you hit, double its bonus
-
 ### Feature: Hand Weapon (Sword)
   As a character, I want ability to wield a sword and slash my opponents to death
-  * When determining damage in a successful attack, use your Strength Bonus + 4.
+  * The sword has a damage bonus of 4
+  * When dealing damage to an opponent, this bonus gets applied in addition to all previous rules
+  * The sword can take damage and reduce its bonus by that amount
+  * The sword will never deal less than +0.
+  * The first time the sword reaches +0 it becomes an improvised weapon
+
+## Feature: Improvised Weapon
+  As a character I want the ability to continue using my weapon despite it being mangled byond all recognition
+  * The weapon has a damage bonus of 1
+  * The weapon has the undamagaing flaw
+    * When hitting an opponent in a location that is covered in armor, that armor's armor points are doubled.
+  * When the weapon takes damage it is broken and useless as a weapon 
+  
+## Feature: Unarmed
+  As a character I want the ability to always be able to fight
+  * When no weapons are equipped, you are equipped with the unarmed weapon
+  * The damage bonus of unarmed is +0
+  * The weapon cannot take damage and is not considered improvised
+  * The weapon does have the undamaging flaw
+  
+## Feature: TBD
+  As a character I want ...
+  * ...
